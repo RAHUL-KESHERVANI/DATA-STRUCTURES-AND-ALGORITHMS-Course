@@ -1,0 +1,64 @@
+								--------TIME COMPLEXITY ANALYSIS------------
+BUBBLE SORT(SORT1.C):
+	CASE 1( BEST CASE ): When all the elements are already sorted in ASCENDING ORDER(as the algorithm sorts in that order), the time equation would be 
+				T(n) =	A(n^2) + B(n)
+				
+	CASE 2(WORST CASE): When all the elements are already sorted in DESCENDING ORDER, the time equation would be 
+				T(n) = (A+C)n^2 + B(n)
+				because of the extra if statements getting executing every time the loop runs.
+	CASE 3(average case): T(n) = K(n^2) + B(n)   where A < K < A+C
+
+	OMEGA NOTATION:	T(n) = O(n^2)
+	SIGMA NOTATION:	T(n) = O(n^2)
+	THETA NOTATION: T(n) = O(n^2).
+
+SELECTION SORT(SORT2.C):
+	ITS TIME COMPLEXITY HAS THE SAME EQUATION WITH COEFFICIENTS BEING SMALLER AS ITS INSIDE "J" LOOP RUNNING TIME DECREASES AS I INCREASES.
+	THUS,	
+
+	OMEGA NOTATION:	T(n) = O(n^2)
+	SIGMA NOTATION:	T(n) = O(n^2)
+	THETA NOTATION: T(n) = O(n^2).
+
+TIME COMPLEXITY EXPERIMENTAL PATTERN(WITHOUT GETTIMEOFDAY()):
+      	sort1     	sort2
+1k     	0.02           	0.02
+2k 	0.04		0.02
+4k 	0.09		0.06
+5k	0.24		0.16
+7k	0.29		0.2
+8k	0.28		0.20
+10k    	1.01           	0.64
+15k	1.20		0.80	
+25k	4.50		2.96
+40k	16.9		10.75
+50k	18.35		12.08			//data2 for slope
+60k	20.01		13.51
+75k	66.71		42.15
+80k	68.03		43.56
+100k   	76.64          	61.56
+200k    317.88		197.33
+300k	1017.63		530.06
+500k	1344.46		775.32			//data1 for slope
+1000k	5519.07		3825.56
+
+
+To Prove that this is a FUNCTION OF n^2 :
+	slope = data1 - data2
+	      = 1344.46 - 18.35 / (500k ^ 2 -50 ^ 2)
+	      = 5.35 * (10 ^ -9)
+	thus T(1000k) = slope * (1000k ^ 2)      //T(n) here is experimental T(n)
+		      = 5350
+	
+	This can also be shown for other values of n
+	This proves that theorotical time complexity matches with the practically observed time complexity.
+
+
+BEHAVIOUR OF GRAPH:
+	Graph at the first has very low values but for sufficiently large n(here near 300k) it suddenly increases. 
+	
+	Time taken is increasing slowly until a very high valu of n after which it increases only less than exponential.
+	
+	Ideally, the graph should just keep on increasing but here in the middle (near 300k) increasing slows down before a very hogh input.
+	
+	This is mainly because the computing time for lower range is very less but at the start input of this range time taken increases suddenly.but for this range it 	hardly grows as the time taken for this range of input is more or less same.      

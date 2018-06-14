@@ -1,0 +1,65 @@
+
+(Assignment) Strings and Maths Problems
+Problem 1) [2 marks]
+Write a program to compute x^y, where x and y are ints. The computation should be based on using base-3 presentation of a number. 
+
+This problem is exactly same as the one solved in the class. The code given in this file, as solved in class,  pow2.c  http://moodle.coep.org.in/moodle/pluginfile.php/29815/mod_folder/content/0/pow2.c?forcedownload=1 uses the concept of base-2 representation of a number. You have to derive the logic using base-3 presentation of a number. This will be applied to y. 
+
+In the program, write a function which computs x^y like this:  double pow(int x, int y);
+
+The program will read x and y from the user using scanf(). 
+
+Hint: Instead of squaring the term, you will cube the term now. 
+
+Filename:   xpow3y.c 
+
+Problem 2) [2  marks]
+Write a program to remove duplicate doubles from an array of doubles, without changing the ordering of the numbers. The program reads the data from a binary file containing double numbers.
+
+In the program, write a function which accepts an array of doubles and removes the duplicates from the array and has returns the no. of doubles remaining.  The function prototype is given below:
+
+int removeduplicate(double a[], int n); 
+Here, n is the number of doubles in the array a[]. 
+
+Note that removing a double here means, the array will have <=n elements after the function. This means shifting/moving of existing elements and readjusting the value of 'n'. This new value of n will be returned. 
+
+Filename:  remdup.c
+
+Problem 3) [3 marks]
+Write a complete C program, which has following function:
+
+int stringreplace(char *text, char *orig, char *new);
+
+This function replaces all occurrences  of the string orig inside the string text to the string new and then returns the number of instances replaced. Note: the string text changes as a result of the program.
+
+filename: stringreplace.c
+
+Examples
+1)
+
+text:  thisismynamewhatishisname
+orig:    his
+
+new:   her
+After function call, text becomes: therismynamewhatishername and function returns 2 as it did 2 replacements.
+
+2)
+text:  aabrakaadaabraaisgaabra
+
+orig:   abr
+new:  bing
+
+after function call text becomes: abingakaadabingaaisgabinga and function returns 3 as it did three replacements.
+Use the following main function:
+
+#include <stdio.h>
+int main() {
+    char text[128], orig[128], new[128]; // don't assume size of 128 in the function stringreplace, it is not available in the function!
+    int count;
+    while(scanf("%s%s%s", text, orig, new) != -1) {
+       count = stringreplace(text, orig, new);
+       printf("%d %s\n", count, text);
+    }
+}
+Submission:
+Submit all files in a single .tar.gz file named as MISID.tar.gz 

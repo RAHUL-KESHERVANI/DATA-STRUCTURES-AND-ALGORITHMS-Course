@@ -1,0 +1,65 @@
+(Assignment) Time Complexity and Performance Measurement
+The assignment involves finding out the actual time taken by two sorting programs, and plotting the graph of "size of input" vs "time taken". Detailed instructions are given below. 
+
+1. Write two sorting programs, using any possible logic, may be by taking help from books or web. The programs read a set of numbers from user (using scanf), then sort them in non-decreasing order, and then print the sorted sequence of numbers. 
+
+Note that this program needs to read input of an unknown size. For this you can use the code given in this file (click). 
+
+Give following names to the two program files:
+
+filenames:  sort1.c  sort2.c
+
+2. You need to give at least 20 different inputs-sets to the program (For example, 10 different numbers, 200 different numbers, 10000000 different numbers, etc). For each input find out the time taken using the "time command". To find this, run your program on command line as
+
+> time ./myprogram 
+
+When the above command is over, you will see output like 
+
+real 0m0.017s
+user 0m0.001s
+sys 0m0.004s
+
+Out of this the "user" time is of your importance. Note it down for every set of input.
+
+3. For this whole exercise, you need different sets of data to be input. Because computers are very fast, you will not see some reasonable "user" time unless the data size is very big. You can not enter data of sizes 100000 by hand. So the task of generating sets-of-input-numbers needs to be automated. These data sets can be generated using the procedure given below. 
+
+Download the program random.c given at this link (click): 
+Compile this program (cc random.c -o random)
+When you run this program normally, (by saying ./random) it expects you to input two numbers: n and max. n is the number of random values to be generated and max is the maximum possible generated random value. (the program does not print any message like "give your input", so just enter the two numbers). Then it prints "n" random numbers, with values upto "max". 
+You need to save the output of this program in a file. For this run the program as follows (note the > after ./random. Also note that the 3 and 10 are the inputs for n and max):
+prompt> ./random > data1.txt 
+
+3 10
+
+prompt>
+
+When run like this, there will be no output on the screen. The output is saved in the file "data1.txt". When your prompt is back, you can open the 'data1.txt" file (using vi/gedit/etc) and see the data
+Repeat the above procedure with different values of n and max. You should be giving inputs of large sizes to get meaningful results. 
+Now to run your program with data stored in the data-files, run command like this
+> cat  data1.txt | time ./myprogram
+
+Use of the "|" in the command ensures that the (standard) output of the first command, i..e "cat data1.txt" becomes the (standard) input for the second command "time ./myprogram". So the scanf() of your code will not read from keyboard, but instead will read the data printed by first cat command.
+
+4. You are free to modify the random.c program.
+
+5. After getting the time values for many inputs, plot a graph using the "gnuplot" utility. Use these tutorials to learn it
+
+ http://mathewpeet.org/computing/software/gnuplot/
+
+http://sip.clarku.edu/tutorials/gnuplot/
+
+Name your graph files as follows:
+
+graph1.jpg
+
+You have to carry out the activity of plotting graph using both sorting programs.  The lines for both sorting programs should be plotted on the same graph.
+
+6. Find time complexity (O, Omega) of both the sorting programs. Check it against the behaviour of your graphs.
+
+7. Now carry out the steps for plotting the graph, this time using the gettimefoday() function inside your code. The two calls to gettimeofday() should be before you call sort and after the call to sort() function.  This will leave out the time involved in I/O like printf/scanf also. Plot the two graphs using these two also.  Name the graph file as graph2. jpg
+
+Write an analysis explaining the behaviour of the graph in a text file. The file should have: time complexity analysis + discussion on behaviour of the graph. The important part of the analysis is correlation between the theorotical time complexity and the practically observed time complexity. Name the text file as  analysis.txt
+
+Submit all files in one tar.gz file as 
+
+MISID.tar.gz

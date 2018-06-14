@@ -1,0 +1,12 @@
+(Assignment) Evaluate Infix Expression
+Write a function which evaluates an infix expression, without converting it to postfix. The input string can have spaces, (, ) and precedence of operators should be handled.  Write a main() function which calls the function you wrote.
+
+Function prototype should be:
+
+int infixeval(char *infix);
+
+You can use the standard library functions: strtok(), atoi()
+
+You should write down your own stack types for this. The stack types should be implemented using malloced structures linked to each other, such that the stack uses only one head pointer, the push appends the element at the end of the sequence. (This was discussed as the first alternative in the class).
+
+Hints: To solve manually, first try to solve an infix expression without brackets and precedence. Then solve an expression with precedence. Then consider brackets and design your psuedocode.

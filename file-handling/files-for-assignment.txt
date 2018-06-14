@@ -1,0 +1,21 @@
+These are the data files to be printed by  first program of assignment on files.
+
+If you can't download the .tar.gz file given below, try this link: https://drive.google.com/open?id=0ByEGNRykh77-UGxZSXVVeXVFUmM 
+
+The file "readdata" is a 64 bit executable file which prints the two files.  This is to give you a way to check whether your program works correctly or not.  After you download the "read" file, run the commands
+
+>chmod +x readdata
+
+>./readdata data
+
+>./readdata data2
+
+# Note: you should be in the folder of the file "readdata" to run this command.
+
+The first command changes the file permissions on the file "read" to have executable permissions.
+
+The second command runs the "readdata" program with argument "data" and the 'readdata' program prints contents of the file 'data'
+
+The third command runs the 'readdata' program with argument "data2" and 'readdata' program prints contents of the file 'data2'.
+
+In the assignment - You are supposed to write a program which works preceisely like the 'readdata' program.

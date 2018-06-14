@@ -1,0 +1,43 @@
+(Assignment) File Handling
+1) 3 Marks 
+
+Write a set of two programs.  The programs use following structure:
+
+struct info { int id;  char name[16]; double score; };
+
+First program (filename:  writestructs.c )  reads data from user into an array of structures. It then writes (a) No. of structures (say 'n' as an int) and (b) Array of 'n' structures - to a file (filename given as command line argument) as binary data.  Files like this are called 'data files' here. 
+
+The second program (Filename: readstructs.c) takes a data file name as command line argument, reads the file into an array of 'info' structures. The second command line argument to this program is a 'double x'. The program finds and prints the structures which match the score=x.
+
+Note: your program will be checked by running your readstructs.c program against data files created by the evaluators. Submit both files writestructs.c and readstructs.c 
+
+2) 3 Marks
+
+There are 2 files given in "Files for Assignment" folder, named "data" and "data2". These two files contain data in following Binary format. 
+
+<n>an integer 
+
+set of n integers
+
+<m>an integer
+
+a set of m records of following type    struct data {         int age         char name[16]; };
+
+<p>an integer
+
+a set of p strings. each string is written as all characters followed by '\0' and next string starts immediately.
+
+You have to write a C program which reads the 'data' or 'data2' file and prints its contents. The folder "Files for Assignment " also contains  a machine code file called "readdata", which, when run, shows you the output expected.
+
+Your program is not allowed to call the fread, fwrite, fopen, category of functions. 
+
+Filename: 'readdata.c'
+
+Note: run the command "chmod +x readdata" on the file to make it executable.  
+
+
+3) 2 Marks
+
+The folder "files for assignment" has a file called "decodeme". This file contains some meaningful data. Print the contents of the file. You will need to use your wit, programming knowledge, and "intelligent guesswork" to decode the contents of this file and print them.  Name the code file as (decodefile.c)
+
+Submit all files as a single .tar.gz file named MISID.tar.gz

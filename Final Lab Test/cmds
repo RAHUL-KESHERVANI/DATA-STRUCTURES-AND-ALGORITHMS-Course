@@ -1,0 +1,5 @@
+cc list.c listmain.c -o try
+./try
+cc graph.c minheap.c prims.c -o try
+./try test nashik nagpur
+
