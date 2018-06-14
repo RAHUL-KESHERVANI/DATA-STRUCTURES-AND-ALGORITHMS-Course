@@ -1,0 +1,58 @@
+Lab Test 1 (8 Sep 2017) - Part 2
+DSA Lab Test-1 : Part 2
+
+Instructions
+All programs must be properly indented and formatted. The programs will not be checked otherwise.
+The programs must compile. Programs not compiling will not be checked.
+You can carry textbooks, notes, etc and access man pages on the computer.
+Use of internet is not allowed.
+You must use the exact filenames, as specified, for the programs.
+You must VERIFY YOUR OWN SUBMISSION. Any issues related to incomplete submission will not be entertained.
+You must use the open/read/write set of functions. Use of fopen/fread/fwrite is not allowed.
+You must solve the question set (odd or even) assigned to you. 
+
+Submission:
+Collect all files in one folder named after your MISID. Create a file MISID.tar.gz from the folder and submit it.
+
+Odd column problem set
+
+1) 15 Marks
+
+Write a program which takes three command line arguments. First is a file name, second is a word to be searched and third is the word to be replaced in the file. Here a word means a character sequence separated by at least one space. Your program should not use another file. The input file can be of any size.
+E.g. if the program was run as 
+./replaceword data.txt my your 
+and file data.txt was was
+abhijit ismy my name
+then the file should change to 
+abhijit ismy your name
+That is only the second 'my' will change to 'your' as it's a word as per our definition. 
+
+Program's Filename: wordreplace.c 
+
+(2)10 Marks
+Implement a stack of integers using array such that the size of array keeps expanding when stack is full. If you can't expand the array, then the stack becomes full. This requires a cleaver implementation of push, and full.   
+Filenames:    estack.c  estack.h 
+
+You may write other files to test your stack, but no need to submit them. 
+
+Even column problem set
+
+
+(1) 25 Marks
+Write a program which takes three command line arguments. First is a file name, second is a character sequence to be searched and third is the character sequence to be replaced in the file.  Your program should not use another file. The input file can be of any size. 
+E.g. if the program was run as 
+./repsequence info.txt  my your 
+and the file info.txt was
+abhijit ismy my name
+then the file should change to 
+abhijit isyour your name
+That is both the 'my' will change to 'your' 
+
+Program's Filename: seqreplace.c 
+
+(2) 10 Marks
+Implement a stack of strings using array such that the push() stores elements from the right end of the array.  The string can be of any lengths. You are free to select the nature of your array. 
+
+Filenames:    stringstack.c  stringstack.h 
+
+You may write other files to test your stack, but no need to submit them. 

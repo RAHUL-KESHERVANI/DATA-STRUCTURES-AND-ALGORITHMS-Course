@@ -1,0 +1,63 @@
+
+Lab Test 1 (8 Sep 2017) - Part 1
+DSA Lab Test-1 - Part 1
+Duration: upto 3:15pm 
+
+
+Instructions
+All programs must be properly indented and formatted. The programs will not be checked otherwise.
+The programs must compile. Programs not compiling will not be checked.
+You can carry textbooks, notes, etc and access man pages on the computer.
+Use of internet is not allowed.
+You must use the exact filenames, as specified, for the programs.
+You must VERIFY YOUR OWN SUBMISSION. Any issues related to incomplete submission will not be entertained.
+You must use the open/read/write set of functions. Use of fopen/fread/fwrite is not allowed.
+You must solve the question set (odd or even) assigned to you. 
+The exam runs in two parts. First part to be submitted before 3:15pm.  Then there is a break upto 3:30pm. The second part starts from 3:30pm. You should not be late for the second part and be present in the hall before 3:30pm. 
+
+Submission:
+Collect all files in one folder named after your MISID. Create a file MISID.tar.gz from the folder and submit it.
+
+Odd column problem set
+1) 10 Marks
+Write a program which prints the maximum repeating character in a file. Filename specified as argv[1]. 
+
+Program's file name: maxchar.c 
+
+
+2) 15 Marks
+Write a program which: 
+(a) Implements an array based stack type of integers with one index into array. The init() function initialises the index to 0. Every push stores the elements in alternate array locations. (e.g. 0, then 2 then 4, and so on) and on reaching the end of the array, push() uses the array cyclically to use the remaining slots of the array.  Keep array size as MAX (#define it). You may use extra variables in the stack type definition, if needed. Design your pop() and other functions accordingly.
+
+Implement all the five stack functions.  The function prototypes remain the same as discussed in class.
+ 
+Program Filenames: oddstack.c  oddstack.h
+
+(b) The main() function, written in a separate file, reads number from the user (till user pressed ctrl-D) and pushes them on stack and then pops() all elements till stack is empty and prints the numbers on screen.
+
+The main will not print any error messages if pop/push are called on empty/full stack, it will just ignore the push/pop operation and continue further. 
+
+Program Filename: nextslot.c
+
+Even column problem set
+(1) 10 Marks
+Write a program which reads a text file, specified as argument to main, and counts the number of words in it. A word is any character sequence separated by one-or-more spaces. 
+
+Filename: countwords.c
+
+
+
+
+(2) 15 Marks
+
+Write a program which: 
+(a) Implements an array based stack type of integers. You may use any other variables in the stack data type definition. First push stores number at 0, second push at MAX-1, third at 1, fourth at MAX-2 and so on. That is every push stores the element at next location available from left and right end of array alternatively. Keep array size as MAX (#define it). Design your pop() and other functions accordingly. 
+
+Implement all the five stack functions.  The function prototypes remain the same as discussed in class.
+ 
+Program Filenames: evenstack.c  evenstack.h
+
+(b) The main() function, reads numbers from user (till user presses ctrl-D) and pushes them on the stack and then pops() all elements till stack is empty and prints the numbers on screen.
+
+The main will not print any error messages if pop/push are called on empty/full stack, it will just ignore the push/pop operation and continue further.
+Filename:  oddeven.c 
