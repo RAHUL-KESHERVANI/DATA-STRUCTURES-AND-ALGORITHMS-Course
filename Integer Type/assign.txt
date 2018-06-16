@@ -1,0 +1,87 @@
+
+(Assignment) Integer Type
+Background
+In the class, we have discussed various possible implementations of a "list" data type. We have also discussed that all the data structures that we'll implement are essentially 
+(a) a collection storage: either array with some indices OR  structures-pointers-malloced memory 
+    E. g. the stack could be implemented as array+index or structures-pointers
+(b) a scheme of storing and manipulating the data in the collection storage
+    E.g. for array based stack: start at 0, and then a[i++] = x and so on.
+(c) different operations on the data, i.e. interface functions in the header files 
+    E.g. the functions for the stack 
+    void init(stack *s);  void push(stack *s, int e); etc. 
+
+You can implement any required data type using the two approaches: array based, or structures-linking approach.
+
+Task:
+Here You are required to implement a data type called "Integer", using a doubly linked NULL terminated sequence of structures. The data type should represent non-zero integers of unlimited length (i.e. the problem does not deal with negative numbers). Each struct (called node) in the data-structure will store one digit of an integer. E.g. as shown in the diagram below 
+
+
+You are required to implement the following functions for the Integer data type: 
+
+/* Initialize the "Integer" type data structure. 
+ * You may interpret an "empty" Integer to be the value 0. 
+ */
+
+void initInteger(Integer *a); 
+
+/* Appends one digit to an existing Integer data type. 
+ * E.g. if the Integer a was 1234 and the function was called as
+ * addDigit(Integer *a, char c); where c='5' 
+ * then Integer a becomes 12345. 
+ * Ignore the request if c is not a digit.  
+ */
+
+void addDigit(Integer *a, char c); 
+
+/* Create and return an Integer from a string. 
+ * 'str' may contain non-digits, in that case you should
+ * process 'str' upto the first non-digit. E.g. if 
+ * 'str' was  123ab45 then the Integer returned will be 123
+ * if 'str' was "abhijit" then the Integer returned will be 0
+ */
+
+Integer createIntegerFromString(char *str);
+
+/* This function adds two Integers a and b, and returns the sum as Integer */
+
+Integer addIntegers(Integer a, Intger b);
+
+/* This function substracts two Integers a and b, and returns the difference as Integer. Here a must be bigger than b (as Integer is non-zero). If a is smaller than b, then you can return an Integer with value 0 */
+
+Integer substractIntegers(Integer a, Intger b);
+
+/* Print an Integer (just the sequence of digits, nothing else) with a \n in the end  */
+
+void printInteger(Integer a);
+
+/* Destroys an Integer, i.e. deallocates all malloced memory 
+ * for the Integer and reInitiatizes it */
+
+void destroyInteger(Integer *a);
+
+You should submit an integer.h and integer.c files. 
+You may use the following code to test your program. 
+
+
+#include "integer.h"
+int main() {
+    Integer a, b, c;
+    char ch;
+    char str[64]; /* This size may change */
+
+    initInteger(&a);
+    initInteger(&b);
+
+    while((ch = getchar()) != '\n')
+        addDigit(&a, ch);
+    scanf("%s", str);
+    b = createIntegerFromString(str);
+    c = addIntegers(a, b); 
+    printInteger(c);
+    destoryInteger(&c);
+    c = substractIntegers(a, b);
+    printInteger(c);
+    destoryInteger(&c);
+}
+
+You should submit only integer.h and integer.c in a single MISID.tar.gz file 
